@@ -1,0 +1,14 @@
+.icon {
+  @include centeredFlex(flex);
+  width: inherit;
+  height: 120px;
+  padding: 25px auto;
+
+  background-color: $bg-secondary-color;
+  border-radius: 4px;
+
+  &__item {
+    width: 70px;
+    height: 70px;
+  }
+}

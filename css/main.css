@@ -67,7 +67,7 @@ footer {
   overflow: hidden;
 }
 
-.menu {
+.menu, .section__list {
   padding-left: 0;
   margin: 0;
   list-style: none;
@@ -519,5 +519,107 @@ footer {
     font-size: 44px;
     line-height: 1.36;
   }
+}
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: inherit;
+  height: 120px;
+  padding: 25px auto;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+
+.icon__item {
+  width: 70px;
+  height: 70px;
+}
+
+/*============== Стилизация блока Преимущества =============== */
+.section {
+  color: #757575;
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-bottom: 94px;
+    padding-top: 94px;
+  }
+}
+
+.section__title {
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-size: 28px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .section__title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+
+.section__item {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .section__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section__item {
+    -ms-flex-preferred-size: calc((100% - 2 * 30px) / 2);
+        flex-basis: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section__item {
+    -ms-flex-preferred-size: calc((100% - 4 * 30px) / 4);
+        flex-basis: calc((100% - 4 * 30px) / 4);
+    margin: 15px;
+  }
+}
+
+.section__subtitle {
+  text-transform: uppercase;
+  font-size: inherit;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.section__text {
+  line-height: 1.71;
+  margin: 0;
 }
 /*# sourceMappingURL=main.css.map */
