@@ -609,6 +609,16 @@ footer {
         flex-basis: calc((100% - 4 * 30px) / 4);
     margin: 15px;
   }
+  .section__item--wide {
+    -ms-flex-preferred-size: calc((100% - 3 * 30px) / 3);
+        flex-basis: calc((100% - 3 * 30px) / 3);
+    margin: 15px;
+    position: relative;
+  }
+}
+
+.section__image {
+  display: block;
 }
 
 .section__subtitle {
@@ -618,8 +628,35 @@ footer {
   margin-bottom: 10px;
 }
 
+.section__subtitle--positioned {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 27px;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: #ffffff;
+  text-align: center;
+}
+
 .section__text {
   line-height: 1.71;
   margin: 0;
+}
+
+.products {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .products {
+    display: block;
+    padding-top: 0;
+  }
+}
+
+.team {
+  background-color: #f5f4fa;
 }
 /*# sourceMappingURL=main.css.map */
