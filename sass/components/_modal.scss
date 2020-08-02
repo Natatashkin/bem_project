@@ -1,0 +1,238 @@
+/* ==============Модальное окно================= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 94px 15px;
+  overflow-y: scroll;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+
+  @include transitionProperty(transform);
+  @include transitionProperty(background-color);
+}
+
+.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+
+  transform: scale(0);
+  background-color: none;
+}
+
+/* ---------- ФОрма в модальном окне------------- */
+
+.form {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+
+  background-color: $bg-main-color;
+  box-shadow: $box-shadow;
+  border-radius: 4px;
+
+  letter-spacing: 0.01em;
+  text-align: center;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+
+  /* ----------текст в форме-------------- */
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+
+    color: $title-color;
+
+    @media screen and (max-width: 1199px) {
+      line-height: 1.5;
+    }
+  }
+  /* -----------------------поля формы-------------------- */
+  &__field {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    padding-left: 42px;
+    border: $form-border;
+    border-radius: 4px;
+    outline-color: $akcent-color;
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    transform: translate(0, -50%);
+
+    @include transitionProperty(transform);
+    @include transitionProperty(color);
+
+    .form__input:focus + &,
+    .form__input:not(:placeholder-shown) + & {
+      transform: translate(-26px, -36px);
+      font-size: 12px;
+      line-height: 1.17;
+      color: $akcent-color;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+
+    width: 18px;
+    height: 18px;
+    fill: $svg-form-color;
+
+    transform: translate(0, -50%);
+
+    @include transitionProperty(fill);
+
+    .form__input:focus ~ & {
+      fill: $akcent-color;
+    }
+  }
+
+  &__comment {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  &__comment-text {
+    resize: none;
+    width: 100%;
+    height: 120px;
+
+    padding: 12px 16px;
+
+    border: $form-border;
+    border-radius: 4px;
+    outline-color: $akcent-color;
+  }
+
+  &__comment-label {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+
+    @include transitionProperty(transform);
+    @include transitionProperty(color);
+
+    .comment-text:focus + & {
+      transform: translateY(-31px);
+      color: $akcent-color;
+      font-size: 12px;
+      line-height: 1.17;
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    fill: $svg-form-color;
+  }
+}
+
+/* ------------поле с checkbox----------------------- */
+
+.form-policy {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.17;
+
+    width: 100%;
+  }
+}
+
+.checkbox-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $svg-form-color;
+  border-radius: 3px;
+  background-color: $bg-main-color;
+
+  @include transitionProperty(border);
+
+  .policy:focus + & {
+    border: 2px solid $akcent-color;
+  }
+
+  .policy:checked + & {
+    background-color: $akcent-color;
+    background-image: url(../images/icon-check.svg);
+    background-origin: border-box;
+    border-color: $akcent-color;
+  }
+}
+
+.policy {
+  @include transitionProperty(border-color);
+  @include transitionProperty(background-color);
+}
+
+.policy-link {
+  color: $akcent-color;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+.form-button {
+  color: $text-footer;
+}

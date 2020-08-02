@@ -818,6 +818,89 @@
       </div>
     </footer>
 
+    <!-------- модальное окно --------------->
+
+    <div data-modal class="backdrop is-hidden">
+      <form action="" class="form">
+        <p class="form__title">Оставьте свои данные, мы вам перезвоним</p>
+
+        <div class="form__field">
+          <input
+            class="form__input"
+            type="text"
+            name="user-name"
+            id="user-name"
+            placeholder=" "
+          />
+          <label for="user-name" class="form__label">Имя</label>
+          <svg class="form__icon">
+            <use href="./images/form-sprite.svg#person-black"></use>
+          </svg>
+        </div>
+
+        <div class="form__field">
+          <input
+            class="form__input"
+            type="tel"
+            name="user-tel"
+            id="user-tel"
+            placeholder=" "
+          />
+          <label for="user-tel" class="form__label">Телефон</label>
+          <svg class="form__icon">
+            <use href="./images/form-sprite.svg#phone-black"></use>
+          </svg>
+        </div>
+
+        <div class="form__field">
+          <input
+            class="form__input"
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder=" "
+          />
+          <label for="user-email" class="form__label">Почта</label>
+          <svg class="form__icon">
+            <use href="./images/form-sprite.svg#email-black"></use>
+          </svg>
+        </div>
+
+        <div class="form__comment">
+          <textarea
+            class="form__comment-text"
+            name="comment"
+            id="comment"
+          ></textarea>
+          <label for="comment" class="form__comment-label">Комментарий</label>
+        </div>
+
+        <label class="form-policy">
+          <input
+            class="policy visually-hidden"
+            type="checkbox"
+            name="policy"
+            id="policy"
+          />
+          <span class="checkbox-icon"></span>
+          <span>
+            Соглашаюсь с рассылкой и принимаю &nbsp;
+            <a href="#" class="policy-link">Условия договора</a>
+          </span>
+        </label>
+
+        <button type="submit" class="button form-button">
+          Отправить
+        </button>
+
+        <div data-modal-close class="close-button">
+          <svg class="close-button__icon">
+            <use href="./images/form-sprite.svg#close-black"></use>
+          </svg>
+        </div>
+      </form>
+    </div>
+
     <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
