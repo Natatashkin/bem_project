@@ -1,0 +1,39 @@
+.social-list {
+  @extend %list;
+  @include centeredFlex(flex);
+  padding: 0 32px 24px;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    @include centeredFlex(inline-flex);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-decoration: none;
+    @include transitionProperty(background-color);
+
+    &:hover,
+    &:focus {
+      background-color: $akcent-color;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    .social-list__link:hover &,
+    .social-list__link:focus & {
+      fill: $svg-hover-color;
+    }
+
+    &--grey {
+      fill: $svg-color;
+    }
+  }
+}

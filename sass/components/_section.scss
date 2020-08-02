@@ -56,18 +56,13 @@
     @media screen and (min-width: 1200px) {
       flex-basis: calc((100% - 4 * 30px) / 4);
       margin: 15px;
-
-      // .section__item--wide
-      &--wide {
-        flex-basis: calc((100% - 3 * 30px) / 3);
-        margin: 15px;
-        position: relative;
-      }
     }
-  }
 
-  &__image {
-    display: block;
+    // &--for-shadow {
+    //   background-color: $bg-main-color;
+    //   box-shadow: $box-shadow;
+    //   border-radius: 0px 0px 4px 4px;
+    // }
   }
 
   // .section__subtitle
@@ -78,19 +73,7 @@
     margin-top: 30px;
     margin-bottom: 10px;
 
-    &--positioned {
-      margin: 0;
-
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      padding: 27px;
-
-      background-color: $bg-overlay-color;
-      color: $title-secondary;
-      text-align: center;
-    }
+    // &--bigger
   }
 
   // .section_text
@@ -101,16 +84,75 @@
 }
 
 // Products
-.products {
+.product {
   display: none;
 
   @media screen and (min-width: 1200px) {
     display: block;
     padding-top: 0;
   }
+  // .product__item
+  &__item {
+    flex-basis: calc((100% - 3 * 30px) / 3);
+    margin: 15px;
+    position: relative;
+  }
+  // .product__item-title
+  &__item-title {
+    margin: 0;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 27px;
+
+    background-color: $bg-overlay-color;
+    color: $title-secondary;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 // Team
 .team {
   background-color: $bg-secondary-color;
+  margin: -15px;
+
+  &__item {
+    background-color: $bg-main-color;
+    box-shadow: $box-shadow;
+    border-radius: 0px 0px 4px 4px;
+
+    &:not(:last-child) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 4 * 30px) / 4);
+      margin: 15px;
+    }
+  }
+
+  &__item-title {
+    @extend %team-size;
+    font-weight: 500;
+  }
+
+  &__item-text {
+    @extend %team-size;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  &__item-photo {
+    width: 100%;
+  }
 }
