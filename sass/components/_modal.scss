@@ -13,8 +13,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   transform: scale(1);
 
-  @include transitionProperty(transform);
-  @include transitionProperty(background-color);
+  @include transitionProperties(scale, background-color);
 }
 
 .is-hidden {
@@ -92,16 +91,15 @@
     left: 42px;
     transform: translate(0, -50%);
 
-    @include transitionProperty(transform);
-    @include transitionProperty(color);
+    @include transitionProperties(transform, color);
+  }
 
-    .form__input:focus + &,
-    .form__input:not(:placeholder-shown) + & {
-      transform: translate(-26px, -36px);
-      font-size: 12px;
-      line-height: 1.17;
-      color: $akcent-color;
-    }
+  &__input:focus + &__label,
+  &__input:not(:placeholder-shown) + &__label {
+    transform: translate(-26px, -36px);
+    font-size: 12px;
+    line-height: 1.17;
+    color: $akcent-color;
   }
 
   &__icon {
@@ -116,10 +114,10 @@
     transform: translate(0, -50%);
 
     @include transitionProperty(fill);
+  }
 
-    .form__input:focus ~ & {
-      fill: $akcent-color;
-    }
+  &__input:focus ~ &__icon {
+    fill: $akcent-color;
   }
 
   &__comment {
@@ -144,15 +142,69 @@
     top: 12px;
     left: 16px;
 
-    @include transitionProperty(transform);
-    @include transitionProperty(color);
+    @include transitionProperties(transform, color);
+  }
 
-    .comment-text:focus + & {
-      transform: translateY(-31px);
-      color: $akcent-color;
+  &__comment-text:focus + &__comment-label {
+    transform: translateY(-31px);
+    color: $akcent-color;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  &__policy-label {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    @media screen and (max-width: 1199px) {
+      font-size: 12px;
+      line-height: 1.17;
+
+      width: 100%;
+    }
+  }
+
+  &__policy {
+    @include transitionProperties(border-color, background-color);
+  }
+
+  &__policy-link {
+    color: $akcent-color;
+
+    @media screen and (max-width: 1199px) {
       font-size: 12px;
       line-height: 1.17;
     }
+  }
+
+  &__button {
+    color: $text-footer;
+  }
+}
+
+.icon__checkbox {
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $svg-form-color;
+  border-radius: 3px;
+  background-color: $bg-main-color;
+
+  @include transitionProperty(border);
+
+  .form__policy:focus + & {
+    border: 2px solid $akcent-color;
+  }
+
+  .form__policy:checked + & {
+    background-color: $akcent-color;
+    background-image: url(../images/icon-check.svg);
+    background-origin: border-box;
+    border-color: $akcent-color;
   }
 }
 
@@ -177,62 +229,4 @@
     height: 18px;
     fill: $svg-form-color;
   }
-}
-
-/* ------------поле с checkbox----------------------- */
-
-.form-policy {
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  text-align: left;
-
-  @media screen and (max-width: 1199px) {
-    font-size: 12px;
-    line-height: 1.17;
-
-    width: 100%;
-  }
-}
-
-.checkbox-icon {
-  display: inline-block;
-  flex-shrink: 0;
-  margin-right: 8px;
-  width: 16px;
-  height: 15px;
-  border: 2px solid $svg-form-color;
-  border-radius: 3px;
-  background-color: $bg-main-color;
-
-  @include transitionProperty(border);
-
-  .policy:focus + & {
-    border: 2px solid $akcent-color;
-  }
-
-  .policy:checked + & {
-    background-color: $akcent-color;
-    background-image: url(../images/icon-check.svg);
-    background-origin: border-box;
-    border-color: $akcent-color;
-  }
-}
-
-.policy {
-  @include transitionProperty(border-color);
-  @include transitionProperty(background-color);
-}
-
-.policy-link {
-  color: $akcent-color;
-
-  @media screen and (max-width: 1199px) {
-    font-size: 12px;
-    line-height: 1.17;
-  }
-}
-
-.form-button {
-  color: $text-footer;
 }

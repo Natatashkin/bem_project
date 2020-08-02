@@ -9,3 +9,7 @@
   transition-duration: 250ms;
   transition-timing-function: $cubic;
 }
+
+@mixin transitionProperties($property1, $property2) {
+  transition: $property1 250ms $cubic, $property2 250ms $cubic;
+}
