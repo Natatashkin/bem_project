@@ -37,6 +37,17 @@ body.modal-open {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 main {
   background-color: #ffffff;
 }
@@ -49,22 +60,6 @@ h5,
 h6 {
   color: #212121;
   letter-spacing: 0.03em;
-}
-
-footer {
-  background-color: #2f303a;
-  color: #ffffff;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .menu, .social-list, .section__list, .clients__list {
@@ -98,6 +93,11 @@ footer {
 
 .logo--white {
   color: #ffffff;
+}
+
+.logo--margin {
+  display: block;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -433,6 +433,12 @@ footer {
           box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.3);
 }
 
+.button__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -563,6 +569,16 @@ footer {
   padding: 0 32px 24px;
 }
 
+@media screen and (min-width: 1200px) {
+  .social-list--bottom {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 0;
+    margin-right: 94px;
+  }
+}
+
 .social-list__item:not(:last-child) {
   margin-right: 10px;
 }
@@ -593,9 +609,20 @@ footer {
   background-color: #2196f3;
 }
 
+.social-list__link--grey {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
 .social-list__icon {
   width: 20px;
   height: 20px;
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list__link:hover .social-list__icon,
@@ -605,6 +632,10 @@ footer {
 
 .social-list__icon--grey {
   fill: #afb1b8;
+}
+
+.social-list__icon--white {
+  fill: #ffffff;
 }
 
 /*============== Стилизация блока Преимущества =============== */
@@ -760,6 +791,10 @@ footer {
   margin-bottom: 16px;
 }
 
+.team__item-photo {
+  width: 100%;
+}
+
 .clients__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -844,5 +879,175 @@ footer {
 .clients__link:hover .clients__icon,
 .clients__link:focus .clients__icon {
   fill: #2196f3;
+}
+
+footer {
+  background-color: #2f303a;
+  color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer-wrapper {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .contacts {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contacts {
+    margin-right: 165px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts {
+    margin-right: 69px;
+  }
+}
+
+.address {
+  font-style: inherit;
+  line-height: 1.71;
+}
+
+.address:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.address--white {
+  color: #ffffff;
+}
+
+.address--grey {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.address__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.address__link:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.address__link:hover, .address__link:focus {
+  color: #2196f3;
+}
+
+@media screen and (max-width: 1199px) {
+  .social-links {
+    margin-bottom: 60px;
+  }
+}
+
+.social-links__text {
+  text-transform: uppercase;
+}
+
+.subscribe-form__label {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.subscribe-form__email {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 15px 16px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: inherit;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-form__email:focus, .subscribe-form__email:hover {
+  border-color: #2196f3;
+}
+
+.subscribe-form__email::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+.subscribe-form__email:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+.subscribe-form__email::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+.subscribe-form__email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .subscribe-form__email {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-form__email {
+    display: inline-block;
+    width: 358px;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

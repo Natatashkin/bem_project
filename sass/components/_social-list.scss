@@ -3,12 +3,22 @@
   @include centeredFlex(flex);
   padding: 0 32px 24px;
 
+  &--bottom {
+    @media screen and (min-width: 1200px) {
+      justify-content: start;
+      padding: 0;
+      margin-right: 94px;
+    }
+  }
+
+  // .social-list__item
   &__item {
     &:not(:last-child) {
       margin-right: 10px;
     }
   }
 
+  // .social-list__link
   &__link {
     @include centeredFlex(inline-flex);
     width: 44px;
@@ -17,23 +27,40 @@
     text-decoration: none;
     @include transitionProperty(background-color);
 
+    // .social-list__link:hover,
+    // .social-list__link:focus
     &:hover,
     &:focus {
       background-color: $akcent-color;
     }
+
+    // .social-list__link--grey
+    &--grey {
+      background-color: $svg-bg-footer;
+      border-radius: 50%;
+    }
   }
 
+  // .social-list__icon
   &__icon {
     width: 20px;
     height: 20px;
+
+    @include transitionProperty(fill);
 
     .social-list__link:hover &,
     .social-list__link:focus & {
       fill: $svg-hover-color;
     }
 
+    // .social-list__icon--grey
     &--grey {
       fill: $svg-color;
+    }
+
+    // .social-list__icon--white
+    &--white {
+      fill: $svg-hover-color;
     }
   }
 }

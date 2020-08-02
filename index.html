@@ -714,72 +714,78 @@
     </main>
 
     <!-- Подвал сайта -->
-    <footer>
+    <footer class="footer">
       <!-- подвал контакты -->
       <div class="container">
         <div class="footer-wrapper">
-          <div class="bottom-address">
-            <a href="./index.html" aria-label="Логотип компании" class="logo">
+          <div class="contacts">
+            <a
+              href="./index.html"
+              aria-label="Логотип компании"
+              class="logo logo--margin"
+            >
               <span>Web</span>
-              <span class="logo-bottom">Studio</span>
+              <span class="logo--white">Studio</span>
             </a>
-            <address>
+            <address class="address address--white">
               г. Киев, пр-т Леси Украинки, 26
             </address>
-            <address>
-              <a href="mailto:info@example.com" class="bottom-contacts"
-                >info@example.com</a
-              ><br />
-              <a href="tel:+380991111111" class="bottom-contacts"
-                >+38 099 111 11 11</a
-              >
+            <address class="address address--grey">
+              <a href="mailto:info@example.com" class="address__link">
+                info@example.com
+              </a>
+              <a href="tel:+380991111111" class="address__link">
+                +38 099 111 11 11
+              </a>
             </address>
           </div>
 
           <!-- подвал соцсети -->
           <div class="social-links">
-            <p class="social-text">присоединяйтесь</p>
-            <ul class="social-list">
-              <li class="social-item">
+            <p class="social-links__text">присоединяйтесь</p>
+
+            <ul class="social-list social-list--bottom">
+              <li class="social-list__item">
                 <a
                   href="#"
-                  class="social social-footer"
+                  class="social-list__link social-list__link--grey"
                   aria-label="Instagram link"
                 >
-                  <svg class="icon-social">
+                  <svg class="social-list__icon social-list__icon--white">
                     <use href="./images/sprite.svg#instagram"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-item">
+              <li></li>
+              <li class="social-list__item">
                 <a
                   href="#"
-                  class="social social-footer"
+                  class="social-list__link social-list__link--grey"
                   aria-label="Twitter link"
                 >
-                  <svg class="icon-social">
+                  <svg class="social-list__icon social-list__icon--white">
                     <use href="./images/sprite.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-item">
+              <li class="social-list__item">
                 <a
                   href="#"
-                  class="social social-footer"
+                  class="social-list__link social-list__link--grey"
                   aria-label="Facebook link"
                 >
-                  <svg class="icon-social">
+                  <svg class="social-list__icon social-list__icon--white">
                     <use href="./images/sprite.svg#facebook"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-item">
+              <li class="social-list__item">
                 <a
                   href="#"
-                  class="social social-footer"
+                  class="social-list__link social-list__link--grey"
                   aria-label="LinkedIn link"
                 >
-                  <svg class="icon-social">
+                  <svg class="social-list__icon social-list__icon--white">
                     <use href="./images/sprite.svg#linkedin"></use>
                   </svg>
                 </a>
@@ -790,17 +796,19 @@
           <!-- подвал форма подписки -->
           <div class="subscribe-form">
             <form action="" method="post">
-              <label for="email">Подпишитесь на рассылку</label>
+              <label class="subscribe-form__label" for="email"
+                >Подпишитесь на рассылку</label
+              >
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="E-mail"
-                class="subscribe-email"
+                class="subscribe-form__email"
               />
               <button type="submit" class="button">
                 Подписаться
-                <svg class="button-icon">
+                <svg class="button__icon">
                   <use href="./images/sprite.svg#icon-send"></use>
                 </svg>
               </button>
